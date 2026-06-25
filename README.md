@@ -1,44 +1,79 @@
 # GoblinFlash Showcase
 
-GoblinFlash Showcase is a public-facing documentation skeleton for describing the GoblinFlash safety model, evidence review process, and governance discipline at a high level.
+GoblinFlash Showcase is a public documentation entrypoint for the GoblinFlash firmware evidence workflow.
 
-This repository is intentionally docs-only. It does not contain GoblinFlash core source code, firmware samples, device-specific data, private cases, or operational instructions for modifying firmware.
+GoblinFlash is best understood as an **evidence accountability system for firmware analysis**.
 
-## Purpose
+It does not only ask what was found. It asks:
 
-The showcase is meant to explain how the project thinks about firmware evidence, trust boundaries, schema governance, and review discipline without disclosing private implementation details or unsafe procedures.
+* what proves it
+* what is missing
+* what conflicts with it
+* where trust stops
+* who does not have authority to approve change
 
-The project posture is:
+## Public scope
 
-- evidence is not authorization
-- parser output is a witness, not an oracle
-- AI output has no write authority
-- firmware inputs, archive metadata, reports, and migration data are untrusted until validated by deterministic project policy
-- public documentation must avoid operational recipes that could be misused
+This repository is intentionally documentation-only.
 
-## What This Repository Contains
+It does not contain:
 
-- high-level safety and SDLC notes
-- evidence-review principles
-- public boundary descriptions
-- schema-governance summary
-- project status and non-goals
+* GoblinFlash core source code
+* firmware samples
+* BIOS or SPI dumps
+* private cases
+* generated experiment artifacts
+* unlock instructions
+* write-path guidance
+* exploit chains
+* device-specific patching instructions
 
-## What This Repository Does Not Contain
+## Core posture
 
-- firmware modification instructions
-- device-specific recovery or unlock procedures
-- private firmware or customer cases
-- private source code
-- generated experiment outputs
-- issue templates, support workflows, GitHub Actions, or GitHub Pages
+GoblinFlash follows a safety-first review model:
 
-## Discussion Policy
+```text
+Evidence is not authorization.
+Parser output is a witness, not an oracle.
+AI assistance is not engineering authority.
+Unknown remains unknown.
+Read-only analysis is the default.
+```
 
-Discussions may be enabled later for controlled architecture and research discussion. Issues are intentionally off for now.
+A strong-looking signal is not enough. A result must carry its evidence, missing proof, conflicts, and trust boundary.
 
-Support requests, unlock requests, firmware dumps, device-specific offsets, patch requests, and requests for write-path guidance are out of scope.
+## What this showcase describes
 
-## Current Visibility
+This repository describes the public-facing process and safety model around:
 
-Start private. Do not publish publicly until a separate review approves the public boundary.
+* firmware evidence review
+* no-slop SDLC discipline
+* source-scope rules for AI reviewer claims
+* schema governance boundaries
+* public safety and non-goals
+
+## Documentation
+
+Start here:
+
+* [Safety Boundaries](docs/SAFETY_BOUNDARIES.md)
+* [Firmware Evidence Review](docs/FIRMWARE_EVIDENCE_REVIEW.md)
+* [No Slop SDLC](docs/NO_SLOP_SDLC.md)
+* [AI Reviewer Source Scope](docs/AI_REVIEWER_SOURCE_SCOPE.md)
+* [Schema Governance Summary](docs/SCHEMA_GOVERNANCE_SUMMARY.md)
+* [Project Status](docs/PROJECT_STATUS.md)
+* [Non-Goals](docs/NON_GOALS.md)
+
+## Discussions
+
+Discussions are enabled for controlled, high-level research and documentation conversation.
+
+This is not a support forum, firmware unlock service, dump review queue, or patch request tracker.
+
+Support requests, unlock requests, private firmware analysis, dump review, offsets, write-path guidance, and device-specific patching requests are out of scope.
+
+## Contribution boundary
+
+Public-safe documentation improvements are welcome.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
