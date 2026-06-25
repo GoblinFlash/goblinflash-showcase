@@ -4,7 +4,7 @@ GoblinFlash uses schema governance to keep report and evidence shapes explicit, 
 
 ## Current Public Framing
 
-This showcase only describes the governance idea. It does not promote experimental migration code, generated artifacts, or a second truth model.
+This showcase only describes the governance idea. It does not promote experimental migration code, generated artifacts, or a separate source of truth.
 
 Schema governance is used to reason about:
 
