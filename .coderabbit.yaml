@@ -1,0 +1,64 @@
+language: "en-US"
+
+reviews:
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: true
+  review_status: true
+  review_details: true
+  auto_review:
+    enabled: true
+    drafts: false
+  path_filters:
+    - "!**/*.bin"
+    - "!**/*.fd"
+    - "!**/*.rom"
+    - "!**/*.cap"
+    - "!**/*.tar"
+    - "!**/*.tgz"
+    - "!**/*.gz"
+    - "!**/*.zip"
+    - "!**/*.7z"
+    - "!**/*.rar"
+    - "!**/*.zst"
+    - "!**/*.exe"
+    - "!**/*.dll"
+    - "!**/*.so"
+    - "!**/*.dylib"
+    - "!**/*.o"
+    - "!**/*.wasm"
+    - "!**/__pycache__/**"
+    - "!**/.pytest_cache/**"
+    - "!**/.mypy_cache/**"
+    - "!**/.ruff_cache/**"
+    - "!private/**"
+    - "!cases/**"
+    - "!GF_PRIVATE_CASES*/**"
+    - "!**/fixtures/private/**"
+    - "!**/raw/**"
+    - "!**/dumps/**"
+    - "!**/artifacts/private/**"
+    - "**/*.py"
+    - "**/*.md"
+    - "**/*.txt"
+    - "**/*.json"
+    - "**/*.yaml"
+    - "**/*.yml"
+
+  path_instructions:
+    - path: "goblinflash/**/*.py"
+      instructions: |
+        Review as firmware evidence-processing code.
+        Prioritize hard bounds checks, offset arithmetic safety, explicit size validation, deterministic behavior, sanitized egress, and read-only safety contracts.
+        Flag any payload execution, vendor tool execution, firmware modification, NVRAM write path, shell invocation, unsafe archive extraction, raw firmware egress, or AI write authorization.
+        Boolean trust flags must use identity semantics: value is True / value is False, not truthy/falsy coercion.
+
+    - path: "tests/**/*.py"
+      instructions: |
+        Require adversarial tests for malformed structures, oversized inputs, parser guard events, sanitization, sensitive path/identifier redaction, hostile objects, archive traversal, and exact boolean semantics.
+        Flag tests that only check happy paths for parser, firmware, evidence, or safety-gate behavior.
+
+    - path: "README*.md"
+      instructions: |
+        Check that claims are evidence-grounded and do not imply write authorization, flashing support, malware verdicts, parser truth from signal layers, or AI authority.
+        Preserve the doctrine: read-only analysis first; evidence is not authorization.
