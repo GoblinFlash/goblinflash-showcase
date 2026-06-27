@@ -58,6 +58,11 @@ reviews:
         Require adversarial tests for malformed structures, oversized inputs, parser guard events, sanitization, sensitive path/identifier redaction, hostile objects, archive traversal, and exact boolean semantics.
         Flag tests that only check happy paths for parser, firmware, evidence, or safety-gate behavior.
 
+    - path: "README*.md"
+      instructions: |
+        Check that claims are evidence-grounded and do not imply write authorization, flashing support, malware verdicts, parser truth from signal layers, or AI authority.
+        Preserve the doctrine: read-only analysis first; evidence is not authorization.
+
     - path: "**/README*.md"
       instructions: |
         Check that claims are evidence-grounded and do not imply write authorization, flashing support, malware verdicts, parser truth from signal layers, or AI authority.
