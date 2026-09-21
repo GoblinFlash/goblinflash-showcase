@@ -8,7 +8,7 @@ The project is designed as a firmware-analysis workstation for owner-authorized 
 
 ## Firmware Workspace
 
-![GoblinFlash Firmware Workspace](docs/assets/firmware-workspace.webp)
+![GoblinFlash Firmware Workspace](docs/assets/firmware-workspace.jpg)
 
 The Firmware Workspace is the central review surface: a place to inspect firmware-derived information, correlate findings, preserve evidence, and reason about changes before anything is acted upon.
 

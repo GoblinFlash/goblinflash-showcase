@@ -51,7 +51,7 @@ It is intended to bring together firmware findings, evidence, validation state, 
 
 The public showcase uses one representative screenshot:
 
-`docs/assets/firmware-workspace.webp`
+`docs/assets/firmware-workspace.jpg`
 
 ## Safety boundary
 
